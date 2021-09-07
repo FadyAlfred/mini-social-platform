@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_DB=mini_social_platform
+      - POSTGRES_USER=p_user
+      - POSTGRES_PASSWORD=secretpassword
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+
+  server:
+      build: .
+      command:
+        bash -c "python manage.py makemigrations &&
+        python manage.py migrate &&
+        python manage.py createsuperuser --no-input --username=$DJANGO_SUPERUSER_USERNAME --email $DJANGO_SUPERUSER_EMAIL &&
+        python manage.py runserver 0.0.0.0:8000"
+      volumes:
+        - .:/code
+      ports:
+        - "8000:8000"
+      depends_on:
+        - postgres
+
+volumes:
+  postgres_data:
