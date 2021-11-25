@@ -43,7 +43,7 @@ Mini Social Platform uses a number of open source projects to work properly:
 * [Docker](https://www.docker.com/) - is a set of platform as a service (PaaS) products that use OS-level virtualization.
 * [Docker Compose](https://docs.docker.com/compose/) - is a tool for running multi-container applications on Docker.
 
-And of course Nespresso Coffee Machine Store itself is open source with a [public repository](https://github.com/FadyAlfred/ncoffemachine)
+And of course Mini Social Platform itself is open source with a [public repository](https://github.com/FadyAlfred/ncoffemachine)
  on GitHub.
 
 ### Install and run
